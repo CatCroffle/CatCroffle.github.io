@@ -3,11 +3,20 @@
     --primary: #D6B38A;
     --secondary: #F3E7D8;
     --light: #FFFFFF;
-    --dark: #2B2825;
+    --dark: #8B6B4A;
+}
+
+body {
+    background-color: #F8EFE4;
 }
 
 .bg-primary {
     background-color: var(--primary) !important;
+}
+
+.bg-dark,
+.navbar-dark {
+    background-color: #B89672 !important;
 }
 
 .text-primary {
@@ -24,6 +33,10 @@
 .btn-primary:active {
     background-color: #c4a076 !important;
     border-color: #c4a076 !important;
+}
+
+.container-fluid.text-secondary.py-4[style] {
+    background: #B89672 !important;
 }
 
 .font-secondary {
@@ -77,6 +90,10 @@ h6,
     background: none;
     border: 1px solid var(--light);
     z-index: 0;
+}
+
+.topbar-brand-panel.border-inner::before {
+    border-width: 5px;
 }
 
 .btn-square {
@@ -264,18 +281,18 @@ h6,
     height: calc(100% - 45px);
     top: 135px;
     left: 0;
-    background: linear-gradient(rgba(43, 40, 37, .9), rgba(43, 40, 37, .9)), url(../img/service.jpg) center center no-repeat;
+    background: linear-gradient(rgba(139, 107, 74, .82), rgba(139, 107, 74, .82)), url(../img/service.jpg) center center no-repeat;
     background-size: cover;
     z-index: -1;
 }
 
 .contact::after {
-    background: linear-gradient(rgba(43, 40, 37, .5), rgba(43, 40, 37, .5)), url(../img/bg.jpg) center center no-repeat;
+    background: linear-gradient(rgba(139, 107, 74, .58), rgba(139, 107, 74, .58)), url(../img/bg.jpg) center center no-repeat;
     background-size: cover;
 }
 
 .bg-offer {
-    background: linear-gradient(rgba(43, 40, 37, .9), rgba(43, 40, 37, .9)), url(../img/offer.jpg) center center no-repeat;
+    background: linear-gradient(rgba(139, 107, 74, .82), rgba(139, 107, 74, .82)), url(../img/offer.jpg) center center no-repeat;
     background-size: cover;
 }
 
@@ -330,6 +347,6 @@ h6,
 }
 
 .bg-img {
-    background: linear-gradient(rgba(43, 40, 37, .5), rgba(43, 40, 37, .5)), url(../img/bg.jpg) center center no-repeat;
+    background: linear-gradient(rgba(139, 107, 74, .58), rgba(139, 107, 74, .58)), url(../img/bg.jpg) center center no-repeat;
     background-size: cover;
 }
