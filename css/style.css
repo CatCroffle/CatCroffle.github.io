@@ -48,6 +48,12 @@ body {
     text-shadow: 2px 2px 0 #000000, -1px 1px 0 #000000, 1px -1px 0 #000000, -1px -1px 0 #000000;
 }
 
+#about,
+#menu,
+#contact {
+    scroll-margin-top: 100px;
+}
+
 h1,
 h2,
 .font-weight-bold {
