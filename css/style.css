@@ -3,11 +3,11 @@
     --primary: #D6B38A;
     --secondary: #F3E7D8;
     --light: #FFFFFF;
-    --dark: #8B6B4A;
+    --dark: #55483c; /*** top toolbar ***/
 }
 
 body {
-    background-color: #F8EFE4;
+    background-color: #463c34;
 }
 
 .bg-primary {
@@ -16,7 +16,7 @@ body {
 
 .bg-dark,
 .navbar-dark {
-    background-color: #B89672 !important;
+    background-color: var(--dark) !important;
 }
 
 .text-primary {
@@ -36,11 +36,16 @@ body {
 }
 
 .container-fluid.text-secondary.py-4[style] {
-    background: #B89672 !important;
+    background: var(--dark) !important;
 }
 
 .font-secondary {
     font-family: 'Pacifico', cursive;
+}
+
+.text-outline-black {
+    /* -webkit-text-stroke: 1.2px #000000; */
+    text-shadow: 2px 2px 0 #000000, -1px 1px 0 #000000, 1px -1px 0 #000000, -1px -1px 0 #000000;
 }
 
 h1,
@@ -163,7 +168,7 @@ h6,
 }
 
 .hero-header {
-    background: url(../img/hero.jpg) top right no-repeat;
+    background: url(../img/hero.png) top right no-repeat;
     background-size: cover;
     min-height: 580px;
     display: flex;
