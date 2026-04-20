@@ -2,8 +2,19 @@
 :root {
     --primary: #1f1f1f;
     --secondary: #85715a;
+    --menu-item-bg: #b98758;
     --light: #FFFFFF;
     --dark: #49372c; /*** top toolbar ***/
+}
+
+/* Keep site colors consistent regardless of user OS/browser theme */
+html,
+body,
+input,
+select,
+textarea,
+button {
+    color-scheme: light;
 }
 
 body {
@@ -103,7 +114,7 @@ h6,
     bottom: 10px;
     left: 10px;
     background: none;
-    border: 2px solid var(--light);
+    border: 2px solid black;
     z-index: 0;
 }
 
@@ -207,7 +218,17 @@ h6,
     }
 }
 
+.tab-class .nav.nav-pills .nav-link {
+    font-weight: 700;
+}
+
+.tab-class .tab-content .flex-shrink-0 .img-fluid {
+    border: 1px solid rgba(198, 144, 82, 0.9);
+    box-sizing: border-box;
+}
+
 .tab-content .bg-secondary.border-inner {
+    background-color: var(--menu-item-bg) !important;
     justify-content: flex-start !important;
     padding-top: 34px;
 }
@@ -216,7 +237,7 @@ h6,
     position: absolute;
     top: 0.2rem;
     left: 6%;
-    /* background-color: rgb(70, 70, 70); */
+    background-color: var(--menu-item-bg);
     margin: 0;
     text-align: left;
     line-height: 1;
