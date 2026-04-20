@@ -207,6 +207,23 @@ h6,
     }
 }
 
+.tab-content .bg-secondary.border-inner {
+    justify-content: flex-start !important;
+    padding-top: 34px;
+}
+
+.tab-content .bg-secondary.border-inner h5 {
+    position: absolute;
+    top: 0.2rem;
+    left: 6%;
+    /* background-color: rgb(70, 70, 70); */
+    margin: 0;
+    text-align: left;
+    line-height: 1;
+    display: block;
+    padding: 0 0.4rem 0 0.4rem;
+}
+
 .hero-header {
     background: url(../img/hero.png) top right no-repeat;
     background-size: cover;
