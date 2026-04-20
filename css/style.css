@@ -1,13 +1,17 @@
 /********** Template CSS **********/
 :root {
-    --primary: #D6B38A;
-    --secondary: #F3E7D8;
+    --primary: #1f1f1f;
+    --secondary: #85715a;
     --light: #FFFFFF;
-    --dark: #55483c; /*** top toolbar ***/
+    --dark: #49372c; /*** top toolbar ***/
 }
 
 body {
-    background-color: #2f221a;
+    background-color: #281e18;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 .bg-primary {
@@ -99,7 +103,7 @@ h6,
     bottom: 10px;
     left: 10px;
     background: none;
-    border: 1px solid var(--light);
+    border: 2px solid var(--light);
     z-index: 0;
 }
 
@@ -153,23 +157,53 @@ h6,
     font-size: 18px;
     font-weight: 500;
     text-transform: uppercase;
-    color: var(--light);
+    color: rgba(255, 255, 255, 0.75);
     outline: none;
-    transition: .5s;
+    position: relative;
+    background-color: transparent;
+    border: 1px solid transparent;
+    transition: color .35s ease, background-color .35s ease;
+    z-index: 1;
+}
+
+.navbar-dark .navbar-nav .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 15px;
+    right: 15px;
+    bottom: 16px;
+    height: 3px;
+    background: rgba(47, 38, 33, 0.75);
+    border-radius: 999px;
+    transform: scaleX(0);
+    transform-origin: left center;
+    opacity: 0;
+    transition: transform .35s ease, opacity .35s ease;
 }
 
 .sticky-top.navbar-dark .navbar-nav .nav-link {
     padding: 20px 15px;
 }
 
+.sticky-top.navbar-dark .navbar-nav .nav-link::after {
+    bottom: 10px;
+}
+
 .navbar-dark .navbar-nav .nav-link:hover,
 .navbar-dark .navbar-nav .nav-link.active {
-    color: var(--primary);
+    color: var(--light);
+    background-color: rgba(181, 141, 117, 0.944);
+}
+
+.navbar-dark .navbar-nav .nav-link:hover::after,
+.navbar-dark .navbar-nav .nav-link.active::after {
+    transform: scaleX(1);
+    opacity: 1;
 }
 
 @media (max-width: 991.98px) {
     .navbar-dark .navbar-nav .nav-link  {
-        padding: 10px 0;
+        padding: 10px 12px;
     }
 }
 
