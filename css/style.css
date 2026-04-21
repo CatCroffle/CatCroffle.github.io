@@ -285,8 +285,41 @@ h6,
 }
 
 @media (max-width: 991.98px) {
-    .navbar-dark .navbar-nav .nav-link  {
+    .navbar {
+        position: relative;
+    }
+
+    .navbar-dark .navbar-nav .nav-link {
         padding: 10px 12px;
+        text-align: right;
+    }
+
+    /* Dropdown floats over the page without expanding the navbar */
+    #navbarCollapse {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        padding: 0.25rem 0.75rem 0.75rem;
+        max-width: 200px;
+        width: auto;
+        z-index: 1050;
+        background-color: inherit;
+    }
+
+    /* Remove highlight and underline effects in mobile dropdown, but keep hover */
+    .navbar-dark .navbar-nav .nav-link.active {
+        background-color: transparent !important;
+    }
+
+    .navbar-dark .navbar-nav .nav-link:hover {
+        background-color: rgba(255, 255, 255, 0.1) !important;
+        border-radius: 4px;
+    }
+
+    .navbar-dark .navbar-nav .nav-link::after,
+    .navbar-dark .navbar-nav .nav-link:hover::after,
+    .navbar-dark .navbar-nav .nav-link.active::after {
+        display: none !important;
     }
 }
 

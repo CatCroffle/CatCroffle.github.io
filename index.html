@@ -66,13 +66,15 @@
 
 
     <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-dark navbar-dark shadow-sm py-3 py-lg-0 px-3 px-lg-0">
-        <a href="index.html" class="navbar-brand d-block d-lg-none">
-            <h1 class="m-0 text-uppercase text-white"><img src="img/logo.png" alt="Cat Got Your Croffle logo" class="me-3" style="height: 60px; width: auto;">Cat Got Your Croffle?</h1>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark shadow-sm py-lg-0 px-lg-0 flex-wrap" id="mainNav" style="position: fixed; top: 0; left: 0; right: 0; z-index: 1030;">
+        <div class="d-flex d-lg-none align-items-center justify-content-between w-100 px-3 py-1">
+            <a href="index.html" class="navbar-brand m-0">
+                <h1 class="m-0 text-uppercase text-white d-flex align-items-center" style="font-size: clamp(0.75rem, 4vw, 1.25rem);"><img src="img/logo.png" alt="Cat Got Your Croffle logo" class="me-2" style="height: 36px; width: auto;">Cat Got Your Croffle?</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto mx-lg-auto py-0">
                 <a href="#home" class="nav-item nav-link active">Home</a>
@@ -86,7 +88,7 @@
 
 
     <!-- Hero Start -->
-    <div class="container-fluid bg-primary py-5 mb-5 hero-header" id="home">
+    <div class="container-fluid bg-primary py-5 mb-5 hero-header" id="home" style="padding-top: calc(3rem + 56px) !important;">
         <div class="container py-5">
             <div class="row justify-content-start">
                 <div class="col-lg-8 text-center text-lg-start">

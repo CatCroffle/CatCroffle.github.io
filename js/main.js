@@ -68,6 +68,12 @@
             return;
         }
 
+        // Close mobile dropdown when a nav link is clicked
+        var $collapse = $('#navbarCollapse');
+        if ($collapse.hasClass('show')) {
+            $collapse.collapse('hide');
+        }
+
         e.preventDefault();
         $('html, body').animate({
             scrollTop: $target.offset().top - 90
