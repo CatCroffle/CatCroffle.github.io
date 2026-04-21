@@ -51,6 +51,63 @@ html {
     border-color: #c4a076 !important;
 }
 
+/* Invert states for Offer Contact Us button */
+.bg-offer .btn.btn-primary {
+    background-color: #d18f61 !important;
+    border-color: #d18f61 !important;
+}
+
+.bg-offer .btn.btn-primary:hover,
+.bg-offer .btn.btn-primary:focus,
+.bg-offer .btn.btn-primary:active {
+    background-color: var(--primary) !important;
+    border-color: var(--primary) !important;
+}
+
+/* Invert states for footer Instagram button */
+#contact .btn.btn-primary.btn-lg-square {
+    background-color: #d18f61 !important;
+    border-color: #d18f61 !important;
+}
+
+#contact .btn.btn-primary.btn-lg-square:hover,
+#contact .btn.btn-primary.btn-lg-square:focus,
+#contact .btn.btn-primary.btn-lg-square:active {
+    background-color: var(--primary) !important;
+    border-color: var(--primary) !important;
+}
+
+#contact .btn.btn-primary.btn-lg-square .fa-instagram {
+    color: #2b1502 !important;
+    transition: color .3s ease;
+}
+
+#contact .btn.btn-primary.btn-lg-square:hover .fa-instagram,
+#contact .btn.btn-primary.btn-lg-square:focus .fa-instagram,
+#contact .btn.btn-primary.btn-lg-square:active .fa-instagram {
+    color: #ffd2ab !important;
+}
+
+#contact .bi-envelope-open,
+#contact .bi-telephone {
+    font-weight: 700;
+    -webkit-text-stroke: 0.35px currentColor;
+}
+
+#contact .contact-accent {
+    color: #ffd2ab !important;
+}
+
+/* .contact-block-shift {
+    margin-left: -5px;
+} */
+
+@media (max-width: 991.98px) {
+    .contact-block-shift {
+        margin-left: 0;
+    }
+}
+
 .container-fluid.text-secondary.py-4[style] {
     background: var(--dark) !important;
 }
@@ -62,6 +119,17 @@ html {
 .text-outline-black {
     /* -webkit-text-stroke: 1.2px #000000; */
     text-shadow: 2px 2px 0 #000000, -1px 1px 0 #000000, 1px -1px 0 #000000, -1px -1px 0 #000000;
+}
+
+.offer-services-title {
+    font-size: clamp(1rem, 3.3vw, 2.5rem);
+    line-height: 1.1;
+    /* -webkit-text-stroke: 0.5px #642f10;
+    text-shadow: 0px 0px 0 #000000; */
+}
+
+.offer-services-description {
+    font-weight: 600;
 }
 
 #about,
@@ -414,7 +482,7 @@ h6,
 }
 
 .bg-offer {
-    background: linear-gradient(rgba(139, 107, 74, .82), rgba(139, 107, 74, .82)), url(../img/offer.jpg) center center no-repeat;
+    background: linear-gradient(rgba(139, 107, 74, .82), rgba(139, 107, 74, .82)), url(../img/hero.png) center center no-repeat;
     background-size: cover;
 }
 

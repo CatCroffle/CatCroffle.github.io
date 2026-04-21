@@ -31,8 +31,21 @@
     var $sectionLinks = $('.navbar .navbar-nav .nav-link[href^="#"]');
 
     function setActiveNavByScroll() {
-        var scrollPos = $(window).scrollTop() + 130;
+        var scrollTop = $(window).scrollTop();
+        var scrollPos = scrollTop + 130;
         var currentId = 'home';
+
+        // When near page bottom, force the last section (Contact) active.
+        if (scrollTop + $(window).height() >= $(document).height() - 2) {
+            var lastHref = $sectionLinks.last().attr('href');
+            if (lastHref) {
+                currentId = lastHref.substring(1);
+            }
+
+            $sectionLinks.removeClass('active');
+            $sectionLinks.filter('[href="#' + currentId + '"]').addClass('active');
+            return;
+        }
 
         $sectionLinks.each(function () {
             var targetId = $(this).attr('href');
