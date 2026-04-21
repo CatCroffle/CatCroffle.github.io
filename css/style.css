@@ -1,6 +1,6 @@
 /********** Template CSS **********/
 :root {
-    --primary: #1f1f1f;
+    --primary: #bc804b;
     --secondary: #85715a;
     --menu-item-bg: #b98758;
     --light: #FFFFFF;
@@ -14,7 +14,8 @@ input,
 select,
 textarea,
 button {
-    color-scheme: light;
+    color-scheme: light !important;
+    forced-color-adjust: none !important;
 }
 
 body {
@@ -114,7 +115,10 @@ h6,
     bottom: 10px;
     left: 10px;
     background: none;
-    border: 2px solid black;
+    border: 2px solid #000000;
+    border-color: #000000 !important;
+    forced-color-adjust: none !important;
+    color-scheme: light !important;
     z-index: 0;
 }
 
@@ -220,11 +224,29 @@ h6,
 
 .tab-class .nav.nav-pills .nav-link {
     font-weight: 700;
+    transition: background-color .35s ease, border-color .35s ease, color .35s ease;
 }
+
+.tab-class .nav.nav-pills .nav-link.active,
+.tab-class .nav.nav-pills .show > .nav-link {
+    background-color: var(--primary) !important;
+    border-color: var(--primary) !important;
+}
+
 
 .tab-class .tab-content .flex-shrink-0 .img-fluid {
     border: 1px solid rgba(198, 144, 82, 0.9);
+    border-color: rgba(198, 144, 82, 0.9) !important;
+    forced-color-adjust: none !important;
+    color-scheme: light !important;
     box-sizing: border-box;
+}
+
+.topbar-brand-panel.border-inner::before,
+.tab-class .nav.nav-pills.border-inner::before,
+.tab-content .bg-secondary.border-inner::before {
+    forced-color-adjust: none !important;
+    color-scheme: light !important;
 }
 
 .tab-content .bg-secondary.border-inner {
@@ -449,4 +471,85 @@ h6,
 .bg-img {
     background: linear-gradient(rgba(139, 107, 74, .58), rgba(139, 107, 74, .58)), url(../img/bg.jpg) center center no-repeat;
     background-size: cover;
+}
+
+.footer-contact-inline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem 2rem;
+    width: 100%;
+}
+
+.footer-contact-inline .contact-item,
+.footer-contact-inline .contact-social {
+    margin-bottom: 0;
+}
+
+@media (max-width: 991.98px) {
+    .footer-contact-inline {
+        justify-content: flex-start;
+    }
+
+    .footer-contact-inline h4 {
+        width: 100%;
+    }
+}
+
+/* Explicit color preservation rules to prevent dark mode overrides */
+* {
+    forced-color-adjust: none !important;
+}
+
+h1, h2, h3, h4, h5, h6, p, span, a, label, div, button, input, textarea, select {
+    forced-color-adjust: none !important;
+}
+
+.text-white {
+    color: #FFFFFF !important;
+    forced-color-adjust: none !important;
+}
+
+.text-primary {
+    color: var(--primary) !important;
+    forced-color-adjust: none !important;
+}
+
+.text-secondary {
+    color: var(--secondary) !important;
+    forced-color-adjust: none !important;
+}
+
+h4.text-primary {
+    color: var(--primary) !important;
+    forced-color-adjust: none !important;
+}
+
+.tab-class .tab-content .flex-shrink-0 h4.bg-dark.text-primary {
+    color: #FFFFFF !important;
+    font-weight: 100 !important;
+}
+
+.bg-dark .text-primary,
+.bg-dark h4,
+.bg-dark .text-white {
+    color-scheme: light !important;
+    forced-color-adjust: none !important;
+}
+
+/* Ensure nav links don't change color */
+.navbar-dark .navbar-nav .nav-link {
+    forced-color-adjust: none !important;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link.active {
+    forced-color-adjust: none !important;
+}
+
+/* Prevent form elements from changing colors */
+form, input, button, select, textarea {
+    color-scheme: light !important;
+    forced-color-adjust: none !important;
 }
