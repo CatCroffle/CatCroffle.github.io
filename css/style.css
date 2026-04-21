@@ -398,8 +398,6 @@ h6,
     .tab-content .flex-shrink-0 img.menu-image-contain-mobile {
         object-fit: contain;
         object-position: center;
-        background-color: rgba(255, 244, 230, 0.18);
-        padding: 0.2rem;
     }
 
     .tab-content .flex-shrink-0 img.menu-image-ham-cheese {
@@ -512,8 +510,6 @@ h6,
     .tab-content .flex-shrink-0 img.menu-image-contain-mobile {
         object-fit: contain;
         object-position: center;
-        background-color: rgba(255, 244, 230, 0.18);
-        padding: 0.2rem;
     }
 
     /* Fix text leaking over the inset border */
