@@ -64,38 +64,33 @@ html {
     border-color: var(--primary) !important;
 }
 
-/* Invert states for footer Instagram button */
-#contact .btn.btn-primary.btn-lg-square {
-    background-color: #d18f61 !important;
-    border-color: #d18f61 !important;
-}
-
-#contact .btn.btn-primary.btn-lg-square:hover,
-#contact .btn.btn-primary.btn-lg-square:focus,
-#contact .btn.btn-primary.btn-lg-square:active {
-    background-color: var(--primary) !important;
-    border-color: var(--primary) !important;
-}
-
-#contact .btn.btn-primary.btn-lg-square .fa-instagram {
-    color: #2b1502 !important;
-    transition: color .3s ease;
-}
-
-#contact .btn.btn-primary.btn-lg-square:hover .fa-instagram,
-#contact .btn.btn-primary.btn-lg-square:focus .fa-instagram,
-#contact .btn.btn-primary.btn-lg-square:active .fa-instagram {
-    color: #ffd2ab !important;
-}
-
 #contact .bi-envelope-open,
 #contact .bi-telephone {
     font-weight: 700;
     -webkit-text-stroke: 0.35px currentColor;
 }
 
+#contact .fa-instagram {
+    font-weight: 400;
+    font-size: 1.1rem;
+    -webkit-text-stroke: 0;
+    line-height: 1;
+    transform: translateY(4.5px);
+}
+
 #contact .contact-accent {
     color: #ffd2ab !important;
+}
+
+#contact .contact-link {
+    color: var(--light);
+    text-decoration: none;
+    transition: color .3s ease;
+}
+
+#contact .contact-link:hover,
+#contact .contact-link:focus {
+    color: #ffd2ab;
 }
 
 /* .contact-block-shift {
@@ -106,6 +101,49 @@ html {
     .contact-block-shift {
         margin-left: 0;
     }
+
+    .footer-contact-inline {
+        display: block;
+        margin-top: 2rem;
+    }
+
+    .footer-contact-panel {
+        align-items: stretch !important;
+        text-align: center;
+    }
+
+    .footer-contact-panel h4 {
+        margin-left: 0 !important;
+        margin-bottom: -1rem !important;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    .footer-contact-panel h4 img {
+        height: 7rem !important;
+        margin-right: 0 !important;
+    }
+
+    .footer-contact-inline .d-flex {
+        color: var(--light);
+    }
+
+    .footer-contact-inline p {
+        overflow-wrap: anywhere;
+    }
+
+    .footer-contact-inline .d-flex:last-child {
+        margin-top: 0.75rem !important;
+    }
+
+    .footer-contact-details {
+        padding-top: 2rem !important;
+        margin-bottom: 0 !important;
+    }
+}
+
+.footer-contact-inline {
+    display: none;
 }
 
 .container-fluid.text-secondary.py-4[style] {
@@ -422,6 +460,11 @@ h6,
         padding: 0 0.3rem;
         overflow-wrap: anywhere;
         white-space: normal;
+    }
+
+    .offer-services-title {
+        font-size: clamp(2.3rem, 9.6vw, 3.1rem);
+        line-height: 1.18;
     }
 }
 
