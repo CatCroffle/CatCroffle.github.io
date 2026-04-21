@@ -327,6 +327,18 @@ h6,
         position: relative;
     }
 
+    #mainNav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1030;
+    }
+
+    #home.hero-header {
+        padding-top: calc(3rem + 56px) !important;
+    }
+
     .navbar-dark .navbar-nav .nav-link {
         padding: 10px 12px;
         text-align: right;
