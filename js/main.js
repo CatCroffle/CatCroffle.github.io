@@ -90,29 +90,43 @@
     var $menuLightbox = $('#menuImageLightbox');
     var $menuLightboxImg = $('#menuImageLightboxImg');
     var $menuLightboxMeta = $('#menuImageLightboxMeta');
-    var menuGalleryItems = [];
-    var menuGalleryAlt = 'Menu item image';
+    
+    // All menu items with their images
+    var allMenuItems = [
+        { src: 'img/plain.png', alt: 'Plain' },
+        { src: 'img/banana.png', alt: 'Banana' },
+        { src: 'img/strawberries.png', alt: 'Strawberries' },
+        { src: 'img/strawberr-nana.png', alt: 'Strawberr-Nana' },
+        { src: 'img/blueberries.png', alt: 'Blueberries' },
+        { src: 'img/mixed berries.png', alt: 'Mixed Berries' },
+        { src: 'img/ham n cheese croffle.png', alt: 'Ham & Cheese' },
+        { src: 'img/pizza.png', alt: 'Pizza Croffle' },
+        { src: 'img/fruit cup.png', alt: 'Fruit Cup' },
+        { src: 'img/ice cream.png', alt: 'Ice Cream Scoop' }
+    ];
+    
     var menuGalleryIndex = 0;
 
     function renderMenuGalleryImage() {
-        if (!menuGalleryItems.length) {
+        if (!allMenuItems.length) {
             return;
         }
 
+        var item = allMenuItems[menuGalleryIndex];
         $menuLightboxImg.attr({
-            src: menuGalleryItems[menuGalleryIndex],
-            alt: menuGalleryAlt
+            src: item.src,
+            alt: item.alt
         });
 
-        $menuLightboxMeta.text((menuGalleryIndex + 1) + ' / ' + menuGalleryItems.length);
+        $menuLightboxMeta.text((menuGalleryIndex + 1) + ' / ' + allMenuItems.length);
     }
 
     function stepMenuGallery(step) {
-        if (!menuGalleryItems.length) {
+        if (!allMenuItems.length) {
             return;
         }
 
-        menuGalleryIndex = (menuGalleryIndex + step + menuGalleryItems.length) % menuGalleryItems.length;
+        menuGalleryIndex = (menuGalleryIndex + step + allMenuItems.length) % allMenuItems.length;
         renderMenuGalleryImage();
     }
 
@@ -121,19 +135,28 @@
         $('body').removeClass('menu-lightbox-open');
         $menuLightboxImg.attr('src', '');
         $menuLightboxMeta.text('');
-        menuGalleryItems = [];
         menuGalleryIndex = 0;
     }
 
     $('#menu .tab-content .flex-shrink-0 img').on('click', function () {
-        var fallbackAlt = $(this).closest('.d-flex').find('h5').first().text().trim();
-        var imageAlt = $(this).attr('alt') || fallbackAlt || 'Menu item image';
         var imageSrc = $(this).attr('src');
-
-        // Temporary gallery implementation: duplicate the same image.
-        menuGalleryItems = [imageSrc, imageSrc, imageSrc];
-        menuGalleryAlt = imageAlt;
-        menuGalleryIndex = 0;
+        
+        // Find the clicked image in allMenuItems array
+        var clickedIndex = -1;
+        for (var i = 0; i < allMenuItems.length; i++) {
+            if (allMenuItems[i].src === imageSrc) {
+                clickedIndex = i;
+                break;
+            }
+        }
+        
+        // If found, set the index; otherwise default to 0
+        if (clickedIndex !== -1) {
+            menuGalleryIndex = clickedIndex;
+        } else {
+            menuGalleryIndex = 0;
+        }
+        
         renderMenuGalleryImage();
 
         $menuLightbox.addClass('is-open').attr('aria-hidden', 'false');
