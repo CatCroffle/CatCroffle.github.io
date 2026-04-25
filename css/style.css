@@ -162,8 +162,8 @@ html {
 .offer-services-title {
     font-size: clamp(1rem, 3.3vw, 2.5rem);
     line-height: 1.1;
-    /* -webkit-text-stroke: 0.5px #642f10;
-    text-shadow: 0px 0px 0 #000000; */
+    -webkit-text-stroke: 0.5px #ec8e50;
+    text-shadow: 0.5px 0.5px 0 #4a2b16, -1px 1px 0 #4a2b16, 1px -1px 0 #4a2b16, -1px -1px 0 #4a2b16;
 }
 
 .offer-services-description {
@@ -451,6 +451,115 @@ h6,
     forced-color-adjust: none !important;
     color-scheme: light !important;
     box-sizing: border-box;
+}
+
+#menu .tab-content .flex-shrink-0 img {
+    cursor: zoom-in;
+}
+
+.menu-image-lightbox {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.78);
+    z-index: 2000;
+}
+
+.menu-image-lightbox.is-open {
+    display: flex;
+}
+
+body.menu-lightbox-open {
+    overflow: hidden;
+}
+
+.menu-image-lightbox-img {
+    max-width: min(92vw, 960px);
+    max-height: 86vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.55);
+}
+
+.menu-image-lightbox-close {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    width: 44px;
+    height: 44px;
+    border: none;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.45);
+    color: #ffffff;
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.menu-image-lightbox-close:hover,
+.menu-image-lightbox-close:focus {
+    background: rgba(0, 0, 0, 0.65);
+}
+
+.menu-image-lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.45);
+    color: #ffffff;
+    font-size: 1.6rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.menu-image-lightbox-nav:hover,
+.menu-image-lightbox-nav:focus {
+    background: rgba(0, 0, 0, 0.65);
+}
+
+.menu-image-lightbox-prev {
+    left: 22px;
+}
+
+.menu-image-lightbox-next {
+    right: 22px;
+}
+
+.menu-image-lightbox-meta {
+    position: absolute;
+    bottom: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.35rem 0.8rem;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.45);
+    color: #ffffff;
+    font-size: 0.9rem;
+    letter-spacing: 0.03em;
+}
+
+@media (max-width: 575.98px) {
+    .menu-image-lightbox-nav {
+        width: 42px;
+        height: 42px;
+    }
+
+    .menu-image-lightbox-prev {
+        left: 12px;
+    }
+
+    .menu-image-lightbox-next {
+        right: 12px;
+    }
 }
 
 .topbar-brand-panel.border-inner::before,

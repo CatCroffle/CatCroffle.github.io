@@ -86,6 +86,87 @@
     $(window).on('scroll', setActiveNavByScroll);
     setActiveNavByScroll();
 
+    // Menu image lightbox
+    var $menuLightbox = $('#menuImageLightbox');
+    var $menuLightboxImg = $('#menuImageLightboxImg');
+    var $menuLightboxMeta = $('#menuImageLightboxMeta');
+    var menuGalleryItems = [];
+    var menuGalleryAlt = 'Menu item image';
+    var menuGalleryIndex = 0;
+
+    function renderMenuGalleryImage() {
+        if (!menuGalleryItems.length) {
+            return;
+        }
+
+        $menuLightboxImg.attr({
+            src: menuGalleryItems[menuGalleryIndex],
+            alt: menuGalleryAlt
+        });
+
+        $menuLightboxMeta.text((menuGalleryIndex + 1) + ' / ' + menuGalleryItems.length);
+    }
+
+    function stepMenuGallery(step) {
+        if (!menuGalleryItems.length) {
+            return;
+        }
+
+        menuGalleryIndex = (menuGalleryIndex + step + menuGalleryItems.length) % menuGalleryItems.length;
+        renderMenuGalleryImage();
+    }
+
+    function closeMenuImageLightbox() {
+        $menuLightbox.removeClass('is-open').attr('aria-hidden', 'true');
+        $('body').removeClass('menu-lightbox-open');
+        $menuLightboxImg.attr('src', '');
+        $menuLightboxMeta.text('');
+        menuGalleryItems = [];
+        menuGalleryIndex = 0;
+    }
+
+    $('#menu .tab-content .flex-shrink-0 img').on('click', function () {
+        var fallbackAlt = $(this).closest('.d-flex').find('h5').first().text().trim();
+        var imageAlt = $(this).attr('alt') || fallbackAlt || 'Menu item image';
+        var imageSrc = $(this).attr('src');
+
+        // Temporary gallery implementation: duplicate the same image.
+        menuGalleryItems = [imageSrc, imageSrc, imageSrc];
+        menuGalleryAlt = imageAlt;
+        menuGalleryIndex = 0;
+        renderMenuGalleryImage();
+
+        $menuLightbox.addClass('is-open').attr('aria-hidden', 'false');
+        $('body').addClass('menu-lightbox-open');
+    });
+
+    $('#menuImageLightboxClose').on('click', closeMenuImageLightbox);
+    $('#menuImageLightboxPrev').on('click', function () { stepMenuGallery(-1); });
+    $('#menuImageLightboxNext').on('click', function () { stepMenuGallery(1); });
+
+    $menuLightbox.on('click', function (e) {
+        if (e.target === this) {
+            closeMenuImageLightbox();
+        }
+    });
+
+    $(document).on('keydown', function (e) {
+        if (e.key === 'Escape' && $menuLightbox.hasClass('is-open')) {
+            closeMenuImageLightbox();
+            return;
+        }
+
+        if (!$menuLightbox.hasClass('is-open')) {
+            return;
+        }
+
+        if (e.key === 'ArrowLeft') {
+            stepMenuGallery(-1);
+        } else if (e.key === 'ArrowRight') {
+            stepMenuGallery(1);
+        }
+    });
+
 
     // Modal Video
     $(document).ready(function () {
