@@ -913,6 +913,7 @@ h4.text-primary {
 .tab-class .tab-content .flex-shrink-0 h4.bg-dark.text-primary {
     color: #FFFFFF !important;
     font-weight: 100 !important;
+    font-size: 1.4rem;
 }
 
 .bg-dark .text-primary,
