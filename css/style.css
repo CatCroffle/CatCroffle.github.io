@@ -580,11 +580,22 @@ body.menu-lightbox-open {
     top: 0.2rem;
     left: 6%;
     background-color: var(--menu-item-bg);
+    font-family: 'Pacifico', cursive;
+    font-weight: 400 !important;
+    font-size: 1.4rem;
+    text-transform: none !important;
+    letter-spacing: 0.08em;
+    /* color: #eb9342 !important; */
+    -webkit-text-fill-color: #ec6934;
+    /* -webkit-text-stroke: 0.7px #000000; */
+    text-shadow: 1px 1px 0 #883809, -1px 1px 0 #883809, 1px -1px 0 #883809, -1px -1px 0 #883809;
     margin: 0;
     text-align: left;
     line-height: 1;
     display: block;
     padding: 0 0.4rem 0 0.4rem;
+    forced-color-adjust: none !important;
+    color-scheme: light !important;
 }
 
 .hero-header {
